@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RunningRow</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        picture {
+            width: 100%;
+            display: flex;
+        }
+        .container {
+            /*max-width: 1024px;*/
+            margin: 0 auto;
+            width: 100%;
+        }
+        .runningRow {
+            overflow: auto;
+        }
+        .runningRow-wrapper {
+            display: flex;
+            gap: 20px;
+            transform: translateX(0);
+        }
+        .row-unit {
+            flex: 0 0 400px;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="runningRow">
+        <div class="runningRow-wrapper">
+            <div class="row-unit"><picture><img src="img.jpg" alt="img"></picture></div>
+            <div class="row-unit"><picture><img src="img2.jpg" alt="img"></picture></div>
+            <div class="row-unit"><picture><img src="img3.jpg" alt="img"></picture></div>
+            <div class="row-unit"><picture><img src="img4.jpg" alt="img"></picture></div>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+
+</body>
+</html>
