@@ -37,8 +37,6 @@ class RunningRow {
         this.#initRowElements()
         this.#moveRowHandler()
         this.#gap = getComputedStyle(this.#runningRowWrapper).gap.match(/\d+/)[0]
-
-        console.log(getComputedStyle(this.#runningRowWrapper).gap.match(/\d+/)[0])
     }
 
 
@@ -71,7 +69,6 @@ class RunningRow {
         this.#actualLastChild()
         this.#actualFirstChild()
         this.#actualAbsoluteChild()
-
     }
 
 
@@ -153,17 +150,8 @@ class RunningRow {
         if (this.#firstChildRect.right === -(+this.#gap)) {
             this.#deleteRowElement()
         }
-
         requestAnimationFrame(this.#moveRowHandler.bind(this));
     }
-
 }
 
 const runningRow = new RunningRow('runningRow')
-
-/**
- * todo - проверка, влезают ли все элементы в границы родителя. Если да - досоздавать элементы не надо, если нет -
- *      досоздавать элементы.
- * todo - если верхняя тудушка сделана, то начать двигать строку.
- * todo - когда расстояние от первого элемента будет пикселей на 100 меньше, чем расстояние его стороны до
- *      родителя(когда не видно во вьюпорте), то удалять элемент и создавать новый в конце родителя. */
